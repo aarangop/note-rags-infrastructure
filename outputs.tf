@@ -32,3 +32,13 @@ output "api_key_value" {
   value       = var.enable_api_gateway ? module.api_gateway[0].api_key_value : null
   sensitive   = true
 }
+
+output "sqs_queue_url" {
+  description = "URL of the SQS queue"
+  value       = var.enable_sqs ? module.sqs[0].queue_url : null
+}
+
+output "sqs_queue_arn" {
+  description = "ARN of the SQS queue"
+  value       = var.enable_sqs ? module.sqs[0].queue_arn : null
+}

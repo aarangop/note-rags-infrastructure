@@ -32,7 +32,7 @@ variable "enable_s3" {
 variable "enable_sqs" {
   description = "Enable SQS module"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "enable_lambda" {
@@ -56,5 +56,5 @@ variable "s3_bucket_name" {
 variable "enable_api_gateway" {
   description = "Enable API Gateway module"
   type        = bool
-  default     = false
+  default     = true
 }

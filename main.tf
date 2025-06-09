@@ -43,4 +43,17 @@ module "api_gateway" {
 
   project_name = var.project_name
   environment  = var.environment
+
+  # 🔗 Pass SQS info to API Gateway
+  sqs_queue_arn = var.enable_sqs ? module.sqs[0].queue_arn : ""
+  sqs_queue_url = var.enable_sqs ? module.sqs[0].queue_url : ""
+}
+
+# SQS Module - conditionally enabled
+module "sqs" {
+  count  = var.enable_sqs ? 1 : 0
+  source = "./modules/sqs"
+
+  project_name = var.project_name
+  environment  = var.environment
 }

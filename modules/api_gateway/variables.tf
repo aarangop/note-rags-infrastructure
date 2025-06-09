@@ -27,3 +27,16 @@ variable "api_burst_limit" {
   type        = number
   default     = 200
 }
+
+# Replace the existing SQS variables with these corrected ones
+variable "sqs_queue_arn" {
+  description = "ARN of the SQS queue to send messages to"
+  type        = string
+  default     = ""
+}
+
+variable "sqs_queue_url" {
+  description = "URL of the SQS queue"
+  type        = string
+  default     = ""
+}
